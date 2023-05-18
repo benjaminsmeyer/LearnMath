@@ -13,7 +13,10 @@ public class ProblemSet {
   public void generateProblems (int countToGenerate) {
     Random r = new Random();
     for (int i = 0; i < countToGenerate; i++) {
-      MathProblem p = new AdditionMathProblem(r.nextInt() % 10, r.nextInt() % 10);
+      MathProblem additionP = new AdditionMathProblem(r.nextInt() % 10, r.nextInt() % 10);
+      MathProblem subtractionP = new SubtractionMathProblem(r.nextInt() % 10, r.nextInt() % 10);
+      MathProblem p = r.nextInt(2) == 1 : additionP ? subtractionP;
+      problemSet.add(p);
     }
   }
 }
